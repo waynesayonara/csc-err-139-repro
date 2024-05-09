@@ -8,13 +8,13 @@ The repo is a minimal reproducible example of an error during `dotnet build` of 
 # Steps to repro
 
 ## Build docker with specific dotnet SDK on Ubuntu 23.04
-Execute `docker build .` and build container. Provided docker file will copy the sample project into container, install dotnet dependencies (listed in the official documentation, curl) and then it will install dotnet 7.0.302 using dotnet-install.sh script.
+Execute `docker build .` and build a container. Provided Dockerfile will copy the sample project into container, install dotnet dependencies (listed in the official documentation and curl) and then it will install dotnet 7.0.302 using dotnet-install.sh script.
 
 ## Run built container and exec bash into it
 Execute `docker run IMAGE_ID` and then `docker exec -it CONTAINER_ID bash`
 
 ## Try building provided sample project
-Execute `dotnet build .` from container, it give the following output:
+Execute `dotnet build .` from container, it gives the following output:
 ```
 wayne@wayne-B11:~/t/TestMini$ docker ps
 CONTAINER ID   IMAGE          COMMAND               CREATED         STATUS         PORTS     NAMES
